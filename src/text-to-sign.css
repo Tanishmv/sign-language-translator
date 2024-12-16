@@ -1,0 +1,140 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f0f9;
+    color: #4b2e83;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #5c3d8b;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #7b61d1;
+    margin: 10px auto;
+  }
+  
+  input {
+    font-size: 1.1rem;
+    padding: 15px;
+    width: 80%;
+    max-width: 500px;
+    border: 2px solid #c6a7e1;
+    border-radius: 10px;
+    margin: 15px 0;
+    outline: none;
+    background-color: #ffffff;
+    color: #4b2e83;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #9b7bcd;
+  }
+  
+  button {
+    font-size: 1rem;
+    padding: 12px 30px;
+    background-color: #7b61d1;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #6a4ebc;
+    transform: translateY(-3px);
+  }
+  
+  button:active {
+    transform: translateY(1px);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  /* Container for displaying the translated signs */
+  .translated-signs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px; /* Increase the space between items */
+  }
+  
+  .translated-sign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .translated-sign img {
+    width: 120px;  /* Slightly larger image size for better visibility */
+    height: 120px; /* Ensure all images are square */
+    object-fit: contain; /* Make sure the image fits within the container */
+    margin-bottom: 10px; /* Space between the image and the word */
+    border: 2px solid #7b61d1; /* Border around the image */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth animation */
+  }
+  
+  /* Hover effect to scale the image slightly */
+  .translated-sign:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+  }
+  
+  .translated-sign span {
+    font-size: 1.1rem;
+    color: #7b61d1;
+    font-weight: 500;
+    margin-top: 8px; /* Space between image and the word */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    input {
+      width: 90%;
+    }
+  
+    button {
+      font-size: 0.9rem;
+      padding: 10px 25px;
+    }
+  
+    .translated-signs img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  

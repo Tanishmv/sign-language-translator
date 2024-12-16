@@ -1,0 +1,292 @@
+/* Global Reset to prevent default browser styling */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3e8ff; /* Light purple background */
+  color: #4b2a8d; /* Darker purple text for contrast */
+  line-height: 1.6;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Main Container */
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f3e8ff;
+  padding: 20px;
+}
+
+/* Card Style */
+.card {
+  display: flex;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 1200px;
+  width: 100%;
+  height: 600px;
+  margin: 20px;
+}
+
+.title{
+  font-size: 3rem;
+  font-family: monospace;
+  font-weight: bold;
+  color: #4b2a8d; /* Dark purple */
+  align-items: center;
+  justify-content: center;
+}
+.title-box{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 100px;
+}
+
+/* Left Video Section */
+.video-wrapper {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-wrapper video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  border: 2px solid purple;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+/* Right Prediction Section */
+.prediction-wrapper {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Increased gap between items */
+  background-color: #f9f0ff;
+  border-left: 2px solid #ddd;
+}
+
+/* Prediction Card Styling */
+.prediction-container {
+  background-color: #ffffff; /* White background for the card */
+  border-radius: 12px; /* Rounded corners */
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for card effect */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Spacing between content inside the card */
+  margin-bottom: 20px;
+}
+
+.prediction-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4b2a8d; /* Dark purple */
+}
+
+.prediction-text {
+  font-size: 1rem;
+  color: #4b2a8d;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* Sentence Container Aesthetic */
+.sentence-container {
+  background-color: #f9f0ff; /* Light purple background */
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid #ddd; /* Light border for separation */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  color: #4b2a8d;
+}
+
+.sentence-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4b2a8d;
+  line-height: 1.6;
+}
+
+/* Add smooth transition to hover for the sentence container */
+.sentence-container:hover {
+  background-color: #e6d5f9; /* Slightly darker purple on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Buttons for actions */
+.space-button, .start-button, .stop-button {
+  padding: 12px 28px; /* Reduced size */
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), inset 5px 5px 10px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.space-button:hover, .start-button:hover, .stop-button:hover {
+  box-shadow: 5px 5px 18px rgba(0, 0, 0, 0.2), inset 2px 2px 10px rgba(255, 255, 255, 0.3); /* Adjusted shadow to avoid flickering */
+  transform: translateY(-3px); /* Reduced lift on hover */
+}
+
+.space-button:active, .start-button:active, .stop-button:active {
+  transform: translateY(2px);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3), inset 2px 2px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Switch Models Button */
+.model-switch-container, .prediction-control-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Horizontal space between buttons */
+  margin-top: 10px;
+}
+
+.model-switch-container-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Horizontal space between buttons */
+  margin-top: 10px;
+}
+
+
+.switch-button {
+  padding: 12px 25px;
+  background: linear-gradient(145deg, #4c1d95, #7a56d0); /* Change to a different hue (purple) */
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), inset 5px 5px 10px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.switch-button:hover {
+  background: linear-gradient(145deg, #9b4de6, #6d28d9); /* Slightly change gradient for hover state */
+  box-shadow: 5px 5px 18px rgba(0, 0, 0, 0.2), inset 2px 2px 10px rgba(255, 255, 255, 0.3); /* Adjusted shadow to avoid flickering */
+  transform: translateY(-3px); /* Reduced lift on hover */
+}
+
+.switch-button:active {
+  transform: translateY(2px);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3), inset 2px 2px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Start Prediction Button (Green) */
+.start-button {
+  background: linear-gradient(145deg, #4caf50, #388e3c); /* Green Gradient */
+}
+
+.start-button:hover {
+  background: linear-gradient(145deg, #66bb6a, #2c6e31); /* Lighter Green on hover */
+}
+
+/* Stop Prediction Button (Red) */
+.stop-button {
+  background: linear-gradient(145deg, #f44336, #d32f2f); /* Red Gradient */
+}
+
+.stop-button:hover {
+  background: linear-gradient(145deg, #ef5350, #c62828); /* Lighter Red on hover */
+}
+
+/* Space Button */
+.space-button {
+  background: linear-gradient(145deg, #6d28d9, #9b4de6); /* Purple Gradient */
+}
+
+.space-button:hover {
+  background: linear-gradient(145deg, #9b4de6, #6d28d9); /* Change gradient slightly */
+}
+
+/* Adding Horizontal Space Between All Buttons */
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px; /* Added horizontal space between action buttons */
+}
+
+/* Switch Model Container */
+.switch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px; /* Increased gap between buttons */
+  margin-top: 25px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .video-wrapper,
+  .prediction-wrapper {
+    flex: none;
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .prediction-wrapper {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 10px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  .video-wrapper video {
+    max-width: 100%;
+  }
+}
